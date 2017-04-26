@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>i71</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/iphone-inline-video.js"></script>
+    <style>
+        html,
+        body,
+        video {
+            height: 100%;
+            width: 100%;
+            color: #fff;
+        }
+
+        video {
+            display: block;
+            background: black;
+            width: 100%;
+            height: calc(100vw / 16 * 9);
+            margin: auto;
+        }
+
+        .IIV::-webkit-media-controls-play-button,
+        .IIV::-webkit-media-controls-start-playback-button {
+            opacity: 0;
+            pointer-events: none;
+            width: 5px;
+        }
+
+        button {
+            line-height: 40px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- // <video width="300" height="400" src="/video/video2.mp4" muted autoplay playsinline></video> -->
+    <video width="300" height="400" src="/video/video2.mp4" playsinline></video>
+    <button>play</button>
+    <script>
+        var video = document.querySelector('video');
+        enableInlineVideo(video);
+        setTimeout(function () {
+            // video.play();
+        }, 2000);
+        var btn = document.querySelector('button');
+        btn.addEventListener('touchend', function () {
+            video.play();
+        });
+    </script>
+    所用的库：<br>
+    https://github.com/bfred-it/iphone-inline-video <br>
+    所用的例子：<br>
+    http://game.qq.com/act/a20161121xzq/?ADTAG=tgi.wx.share.qq
+</body>
+</html>
